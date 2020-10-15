@@ -15,3 +15,22 @@ class IngridentSerializer(serializers.ModelSerializer):
         model = models.Ingredient
         fields = ('id','name')
         read_only_fields = ('id',)
+
+class Recipeserializer(serializers.ModelSerializer):
+    ingredient = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=models.Ingredient.objects.all()
+    )
+    tags = serializers.PrimaryKeyRelatedField(
+        many =True,
+        queryset = models.Tag.objects.all()
+    )
+
+    class Meta:
+        model = models.Recipe
+        fields = (
+                  'id', 'title', 'ingredient', 'tags',
+                  'time_minuts', 'price', 'link'
+                  )
+        read_only_fields = ('id',)
+
