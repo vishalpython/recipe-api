@@ -49,7 +49,7 @@ class PublicUserApiTest(TestCase):
          """Test that password must be more than 5 characters"""
          payload = {
              'email': 'vishalgore889@gmail.com',
-             'password' : 'vishal',
+             'password' : 'vish',
              'name' : 'vishal'
          }
          res = self.client.post(CREATE_USER_URL, payload)
@@ -63,7 +63,7 @@ class PublicUserApiTest(TestCase):
 
     def test_create_user_for_token(self):
         """Test that token is created for the user"""
-        payload = {'email':'vishalggore889@gmail.com','passworrd':'vishal'}
+        payload = {'email':'vishalggore889@gmail.com','password':'vishal'}
         create_user(**payload)
         res = self.client.post(USER_TOKEN_URL, payload)
         self.assertIn('token', res.data) #check token in res.data

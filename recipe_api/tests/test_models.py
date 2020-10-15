@@ -1,5 +1,10 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
+from recipe_api import models
+
+
+def sample_user(email='vishalgore889@gmail.com',password='vishal123'):
+    return get_user_model().objects.create_user(email,password)
 
 
 class ModelTestCase(TestCase):
@@ -13,7 +18,6 @@ class ModelTestCase(TestCase):
         password=password
         )
 
-
         self.assertEqual(user.email,email)
         self.assertTrue(user.check_password(password))
 
@@ -25,7 +29,6 @@ class ModelTestCase(TestCase):
         )
 
         self.assertEqual(user.email, email.lower())
-
 
     def test_new_user_invalid_email(self):
         """Test creating user with no email raise error"""
@@ -41,3 +44,12 @@ class ModelTestCase(TestCase):
 
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
+
+    def test_tag_str(self):
+        """Test the tag string repestions"""
+        tag = models.Tag.objects.create(
+            user = sample_user(),
+            name = 'Non-Veg'
+        )
+
+        self.assertEqual(str(tag), tag.name)
