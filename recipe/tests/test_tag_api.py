@@ -39,7 +39,7 @@ class PrivateTagsApi(TestCase):
 
         res = self.client.get(TAGS_URL)
         tag = Tag.objects.all().order_by('-name')
-        serializer = TagSerializer(tag)
+        serializer = TagSerializer(tag, many=True)
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, serializer.data)
 
@@ -64,6 +64,11 @@ class PrivateTagsApi(TestCase):
          payload = {
              'name':'test tag'
          }
+         self.user = get_user_model().objects.create_user(
+             'vishal66@gmail.com',
+             'vishal'
+             'pass123'
+         )
          self.client.post(TAGS_URL, payload)
          exist =Tag.objects.filter(
              user=self.user,

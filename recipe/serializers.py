@@ -6,5 +6,12 @@ class TagSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Tag
-        fields = '__all__'
+        fields = ('id','name')
+        read_only_fields = ('id',)
+
+class IngridentSerializer(serializers.ModelSerializer):
+
+    class meta:
+        model = models.Ingredient
+        fields = ('id','name')
         read_only_fields = ('id',)
