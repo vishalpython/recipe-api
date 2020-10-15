@@ -27,7 +27,7 @@ class PrivetIngrredientsApiTest(TestCase):
 
     def setUp(self):
         self.client = APIClient()
-        self.user = get_user_model().objects.create(
+        self.user = get_user_model().objects.create_user(
             'vishalgore889@gmail.com',
             'pass123'
         )
@@ -41,7 +41,8 @@ class PrivetIngrredientsApiTest(TestCase):
 
         res = self.client.get(INGREDIENTS_URL)
 
-        serializer = IngridentSerializer(Ingredient, many=True)
+        ingrident = Ingredient.objects.all().order_by('-name')
+        serializer = IngridentSerializer(ingrident, many=True)
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, serializer.data)
 
@@ -53,11 +54,30 @@ class PrivetIngrredientsApiTest(TestCase):
         )
 
         Ingredient.objects.create(user = user2, name='chicken-masaala')
-        ingrident = Ingredient.objects.creeate(user = self.user, name="turmic")
+        ingrident = Ingredient.objects.create(user = self.user, name="turmic")
 
-        res = self.client.get(Ingredient)
+        res = self.client.get(INGREDIENTS_URL)
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(len(res.data), 1)
         self.assertEqual(res.data[0]['name'], ingrident.name)
+
+    def test_create_ingredient_successful(self):
+        """ Test create new ingrident"""
+        payload = {'name': 'Cabage'}
+        self.client.post(INGREDIENTS_URL, payload)
+
+        exists = Ingredient.objects.filter(
+            user = self.user,
+            name = payload['name']
+        ).exists()
+
+        self.assertTrue(exists)
+
+    def test_create_ingredient_invalid(self):
+        """ Test creating invalid ingrident fails"""
+        payload = {'name' : ''}
+        res = self.client.post(INGREDIENTS_URL, payload)
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
 
