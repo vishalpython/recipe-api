@@ -34,11 +34,29 @@ class IngredientViewset(BaseClassView):
 
 class RecipeApiView(viewsets.ModelViewSet):
     """Manage recipe in the database"""
-    serializer_class = serializers.Recipeserializer
     queryset = Recipe.objects.all()
+    serializer_class = serializers.Recipeserializer
+
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
+
 
     def get_queryset(self):
         """Retrive the recipe for the authentictaed user"""
         return self.queryset.filter(user = self.request.user)
+
+    def get_serializer_class(self):
+        #overide function this is a fun that called to retrive the serailizer class
+        #for perticular request
+        #this fun are used for wanted to chang the serailzer class for the different action
+        #that are available on the recip0e  viewset
+
+        """Return approprite seralizer class"""
+        if self.action == 'retrieve':
+            return serializers.RecipeDetailSerializer
+
+        return self.serializer_class
+
+    def perform_create(self, serializer):
+        """Create a new recipe"""
+        serializer.save(user=self.request.user)

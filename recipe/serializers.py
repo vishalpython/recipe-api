@@ -34,3 +34,12 @@ class Recipeserializer(serializers.ModelSerializer):
                   )
         read_only_fields = ('id',)
 
+
+class  RecipeDetailSerializer(Recipeserializer):
+
+    """Seralizer rhe recipe detils by reuseing code"""
+    ingredient = IngridentSerializer(many=True, read_only=True)
+    tags = TagSerializer(many=True, read_only=True)
+
+
+
