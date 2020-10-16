@@ -1,3 +1,10 @@
+import tempfile #generate a temporary files so what is dose is allow you to  call a fun
+#which will create a temp file somewhere in the sysytm that you can remove that file after
+#you have used  it
+import os
+
+from PIL import Image
+
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
@@ -11,6 +18,10 @@ from recipe.serializers import Recipeserializer,  RecipeDetailSerializer
 
 RECIPE_URL = reverse('recipe:recipe-list')
 
+
+def image_upload_url(recipe_id):
+    """Return url for reciipe image upload"""
+    return reverse('recipe:recipe-upload-image', args=[recipe_id])
 
 def detail_url(recipe_id):
     """Return recipe  details url"""
@@ -168,6 +179,86 @@ class PrivetRecipeApi(TestCase):
         self.assertEqual(ingredients.count(),2)
         self.assertIn(ingredient1, ingredients)
         self.assertIn(ingrident2,ingredients)
+
+    def test_partial_update_recipe(self):
+        """Test updating recipe with patch"""
+        recipe = sample_recipe(user=self.user)
+        recipe.tags.add(sample_tag(user=self.user))
+        new_tag = sample_tag(user=self.user, name= 'curry')
+
+        payload = {
+            'title':'chicken tikka', 'tags':[new_tag.id]
+
+        }
+        url = detail_url(recipe.id)
+
+        self.client.patch(url, payload)
+
+        recipe.refresh_from_db()
+        self.assertEqual(recipe.title, payload['title'])
+
+        tags = recipe.tags.all()
+        self.assertEqual(len(tags), 1)
+        self.assertIn(new_tag, tags)
+
+    def test_full_update_reecipe(self):
+        """Test updating recipe with put"""
+        recipe = sample_recipe(user=self.user)
+        recipe.tags.add(sample_tag(user = self.user))
+        payload = {
+            'title': 'mutton curry',
+            'time_minuts': 45,
+            'price':450
+
+        }
+        url = detail_url(recipe.id)
+        self.client.put(url , payload)
+
+        recipe.refresh_from_db()
+        self.assertEqual(recipe.title, payload['title'])
+        self.assertEqual(recipe.time_minuts, payload['time_minuts'])
+        self.assertEqual(recipe.price, payload['price'])
+        tags =recipe.tags.all()
+        self.assertEqual(len(tags), 0 )
+
+
+class RecipeImageLoadTest(TestCase):
+
+    def setUp(self):
+        self.client = APIClient()
+        self.user = get_user_model().objects.create_user(
+            'vishalgore8899@gmail.com',
+            'vishal123'
+        )
+        self.client.force_authenticate(self.user)
+        self.recipe= sample_recipe(user = self.user)
+
+    def tearDown(self):
+        self.recipe.image.delete()
+
+    def test_uploading_image_to_recipe(self):
+        """Test uploading image to the recipe"""
+        url = image_upload_url(self.recipe.id)
+        with tempfile.NamedTemporaryFile(suffix='.jpg') as ntf:
+            img = Image.new('RGB',(10,10))
+            img.save(ntf,format='JPEG')
+            ntf.seek(0)
+            res = self.client.post(url, {'image':  ntf}, format='multipart')
+
+        self.recipe.refresh_from_db()
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
+        self.assertIn('image', res.data)
+        self.assertTrue(os.path.exists(self.recipe.image.path))
+
+    def test_upload_image_bad_request(self):
+        """Test uploading an invalid image"""
+        url = image_upload_url(self.recipe.id)
+        res = self.client.post(url, {'image':'notimage'}, format='multipart')
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+
+
+
 
 
 

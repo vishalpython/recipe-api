@@ -127,4 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+# django come with command called with collect static files
+# and what that dose collect all the static files from any dependancy
+# thet we have combine them all and store them in static root
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'recipe_api.User'
