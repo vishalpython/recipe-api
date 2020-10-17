@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a42f6023-71aa-4368-a494-2ec2d9aa63e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe/tests/test_recipe_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/tests/test_recipe_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe_api/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_api/tests/test_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes_projects/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes_projects/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes_projects/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes_projects/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,13 +36,14 @@
     <session id="-25607287">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.214" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.74" value="1" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.82" value="1" />
           <entry key="project.open.time.94" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,7 +61,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="py" value="21063" />
+          <entry key="py" value="23187" />
           <entry key="py@recipe-api" value="5" />
           <entry key="txt" value="24" />
         </counts>
@@ -75,26 +70,25 @@
         <counts>
           <entry key="CommandLine" value="5" />
           <entry key="PLAIN_TEXT" value="35" />
-          <entry key="Python" value="21063" />
+          <entry key="Python" value="23187" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recipe/tests/test_recipe_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="248" selection-start-line="248" selection-end-line="248" />
+            <state relative-caret-position="497">
+              <caret line="322" column="50" lean-forward="true" selection-start-line="322" selection-start-column="50" selection-end-line="322" selection-end-column="50" />
               <folding>
                 <element signature="e#0#87#0" expanded="true" />
-                <marker date="1602870508431" expanded="true" signature="628:743" ph="..." />
-                <marker date="1602870508431" expanded="true" signature="769:870" ph="..." />
-                <marker date="1602870508431" expanded="true" signature="910:1006" ph="..." />
-                <marker date="1602870508431" expanded="true" signature="1051:1161" ph="..." />
-                <marker date="1602870508431" expanded="true" signature="2364:2368" ph="..." />
-                <marker date="1602870508431" expanded="true" signature="7424:8672" ph="..." />
+                <marker date="1602916358375" expanded="true" signature="643:758" ph="..." />
+                <marker date="1602916358375" expanded="true" signature="784:885" ph="..." />
+                <marker date="1602916358375" expanded="true" signature="925:1021" ph="..." />
+                <marker date="1602916358375" expanded="true" signature="1066:1176" ph="..." />
+                <marker date="1602916358375" expanded="true" signature="2379:2383" ph="..." />
               </folding>
             </state>
           </provider>
@@ -103,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipe_api/tests/test_models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
+            <state relative-caret-position="1680">
               <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -126,7 +120,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipe/tests/test_ingredient_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
+            <state relative-caret-position="1365">
               <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
@@ -141,22 +135,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipes_projects/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
+            <state relative-caret-position="2772">
               <caret line="132" column="61" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipe/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="8">
-              <caret line="69" column="64" selection-start-line="69" selection-start-column="64" selection-end-line="69" selection-end-column="64" />
+              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
-                <marker date="1602873457275" expanded="true" signature="438:831" ph="..." />
-                <marker date="1602873457275" expanded="true" signature="1024:1166" ph="..." />
-                <marker date="1602873457275" expanded="true" signature="1209:1214" ph="..." />
+                <marker date="1602915796886" expanded="true" signature="438:1065" ph="..." />
+                <marker date="1602915796886" expanded="true" signature="1258:1400" ph="..." />
+                <marker date="1602915796886" expanded="true" signature="1443:1448" ph="..." />
+                <marker date="1602915796886" expanded="true" signature="1703:1831" ph="..." />
+                <marker date="1602915796886" expanded="true" signature="1854:1863" ph="..." />
               </folding>
             </state>
           </provider>
@@ -165,7 +161,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipes_projects/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
+            <state relative-caret-position="420">
               <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
               <folding>
                 <element signature="e#640#672#0" expanded="true" />
@@ -185,7 +181,6 @@
                 <marker date="1602870798626" expanded="true" signature="120:126" ph="..." />
                 <marker date="1602870798626" expanded="true" signature="287:288" ph="..." />
                 <marker date="1602870798626" expanded="true" signature="287:293" ph="..." />
-                <marker date="1602870798626" expanded="true" signature="1209:1378" ph="..." />
               </folding>
             </state>
           </provider>
@@ -194,8 +189,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipe_api/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="86" column="73" selection-start-line="86" selection-start-column="73" selection-end-line="86" selection-end-column="73" />
+            <state relative-caret-position="308">
+              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="14" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <marker date="1602859730717" expanded="true" signature="309:490" ph="..." />
@@ -207,7 +202,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user/tests/test_user_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
+            <state relative-caret-position="1281">
               <caret line="65" column="62" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
             </state>
           </provider>
@@ -245,9 +240,9 @@
         <option value="$PROJECT_DIR$/recipes_projects/urls.py" />
         <option value="$PROJECT_DIR$/recipe_api/tests/test_models.py" />
         <option value="$PROJECT_DIR$/recipe_api/models.py" />
-        <option value="$PROJECT_DIR$/recipe/tests/test_recipe_api.py" />
         <option value="$PROJECT_DIR$/recipe/serializers.py" />
         <option value="$PROJECT_DIR$/recipe/views.py" />
+        <option value="$PROJECT_DIR$/recipe/tests/test_recipe_api.py" />
       </list>
     </option>
   </component>
@@ -322,7 +317,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/Django/Shopping_Kart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -396,10 +391,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.3464448" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.3517398" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.43698853" />
@@ -411,7 +407,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.87561375" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.87561375" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="manage.py@recipe-api" order="13" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -488,9 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -498,9 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -515,8 +505,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipe_api/tests/test_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1602856984202" expanded="true" signature="214:281" ph="..." />
+            <marker date="1602856984202" expanded="true" signature="2040:2044" ph="..." />
           </folding>
         </state>
       </provider>
@@ -530,7 +529,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recipe/tests/test_ingredient_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="1365">
           <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
@@ -543,14 +542,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes_projects/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
+        <state relative-caret-position="2772">
           <caret line="132" column="61" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes_projects/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
+        <state relative-caret-position="420">
           <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
           <folding>
             <element signature="e#640#672#0" expanded="true" />
@@ -558,45 +557,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recipe_api/tests/test_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1602856984202" expanded="true" signature="214:281" ph="..." />
-            <marker date="1602856984202" expanded="true" signature="2040:2044" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user/tests/test_user_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="1281">
           <caret line="65" column="62" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recipe/tests/test_recipe_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="248" selection-start-line="248" selection-end-line="248" />
-          <folding>
-            <element signature="e#0#87#0" expanded="true" />
-            <marker date="1602870508431" expanded="true" signature="628:743" ph="..." />
-            <marker date="1602870508431" expanded="true" signature="769:870" ph="..." />
-            <marker date="1602870508431" expanded="true" signature="910:1006" ph="..." />
-            <marker date="1602870508431" expanded="true" signature="1051:1161" ph="..." />
-            <marker date="1602870508431" expanded="true" signature="2364:2368" ph="..." />
-            <marker date="1602870508431" expanded="true" signature="7424:8672" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recipe_api/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="86" column="73" selection-start-line="86" selection-start-column="73" selection-end-line="86" selection-end-column="73" />
+        <state relative-caret-position="308">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="14" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <marker date="1602859730717" expanded="true" signature="309:490" ph="..." />
@@ -614,7 +585,6 @@
             <marker date="1602870798626" expanded="true" signature="120:126" ph="..." />
             <marker date="1602870798626" expanded="true" signature="287:288" ph="..." />
             <marker date="1602870798626" expanded="true" signature="287:293" ph="..." />
-            <marker date="1602870798626" expanded="true" signature="1209:1378" ph="..." />
           </folding>
         </state>
       </provider>
@@ -622,12 +592,29 @@
     <entry file="file://$PROJECT_DIR$/recipe/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8">
-          <caret line="69" column="64" selection-start-line="69" selection-start-column="64" selection-end-line="69" selection-end-column="64" />
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-            <marker date="1602873457275" expanded="true" signature="438:831" ph="..." />
-            <marker date="1602873457275" expanded="true" signature="1024:1166" ph="..." />
-            <marker date="1602873457275" expanded="true" signature="1209:1214" ph="..." />
+            <marker date="1602915796886" expanded="true" signature="438:1065" ph="..." />
+            <marker date="1602915796886" expanded="true" signature="1258:1400" ph="..." />
+            <marker date="1602915796886" expanded="true" signature="1443:1448" ph="..." />
+            <marker date="1602915796886" expanded="true" signature="1703:1831" ph="..." />
+            <marker date="1602915796886" expanded="true" signature="1854:1863" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipe/tests/test_recipe_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="322" column="50" lean-forward="true" selection-start-line="322" selection-start-column="50" selection-end-line="322" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
+            <marker date="1602916358375" expanded="true" signature="643:758" ph="..." />
+            <marker date="1602916358375" expanded="true" signature="784:885" ph="..." />
+            <marker date="1602916358375" expanded="true" signature="925:1021" ph="..." />
+            <marker date="1602916358375" expanded="true" signature="1066:1176" ph="..." />
+            <marker date="1602916358375" expanded="true" signature="2379:2383" ph="..." />
           </folding>
         </state>
       </provider>

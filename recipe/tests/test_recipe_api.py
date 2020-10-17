@@ -13,7 +13,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 from recipe_api.models import Recipe, Ingredient, Tag
-from recipe.serializers import Recipeserializer,  RecipeDetailSerializer
+from recipe.serializers import Recipeserializer,  RecipeDetailSerializer, TagSerializer
 
 
 RECIPE_URL = reverse('recipe:recipe-list')
@@ -256,6 +256,73 @@ class RecipeImageLoadTest(TestCase):
         res = self.client.post(url, {'image':'notimage'}, format='multipart')
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_filter_reecipe_by_tag(self):
+        """Test returiing reecipe with the specific tag"""
+        recipe1 = sample_recipe(user=self.user, title="fish  curry")
+        recipe2 = sample_recipe(user=self.user, title='mutton curry')
+
+        tag1 = sample_tag(user=self.user, name='fish')
+        tag2 = sample_tag(user=self.user, name='mutton')
+
+        recipe1.tags.add(tag1)
+        recipe2.tags.add(tag2)
+        recipe3 = sample_recipe(user = self.user, title = 'Chicken curry')
+
+        res = self.client.get(RECIPE_URL,
+                              {'tags' : f'{tag1.id},{tag2.id}'})
+        seralizer1 = Recipeserializer(recipe1)
+        seralizer2 = Recipeserializer(recipe2)
+        seralizer3 = Recipeserializer(recipe3)
+        self.assertIn(seralizer1.data, res.data)
+        self.assertIn(seralizer2.data, res.data)
+        self.assertNotIn(seralizer3.data, res.data)
+
+    def test_filter_recipe_by_ingredient(self):
+        """Test returing recipe with specific ingredient"""
+        recipe1 = sample_recipe(user=self.user, title="egg curry")
+        recipe2 = sample_recipe(user=self.user, title='dal curry')
+        ingredient1 = sample_ingredient(user=self.user, name='egg')
+        ingrident2 = sample_ingredient(user=self.user, name='dal')
+        recipe1.ingredient.add(ingredient1)
+        recipe2.ingredient.add(ingrident2)
+        recipe3 = sample_recipe(user=self.user, title='potato curry')
+
+        res =self.client.get(RECIPE_URL,
+                             {'ingredient': f'{ingredient1.id},{ingrident2.id}'})
+        seralizer1 = Recipeserializer(recipe1)
+        seralizer2 = Recipeserializer(recipe2)
+        seralizer3 = Recipeserializer(recipe3)
+
+        self.assertIn(seralizer1.data, res.data)
+        self.assertIn(seralizer2.data, res.data)
+        self.assertNotIn(seralizer3.data, res.data)
+
+    # def test_retrive_tags_assign_to_recipe(self):
+    #     """Test filtring tag by those assign to recipe"""
+    #     tag1 = Tag.objects.create(
+    #         user=self.user, name='Break fast',
+    #     )
+    #     tag2 = Tag.objects.create(
+    #         user = self.user,
+    #         name = 'Lunch'
+    #     )
+    #
+    #     recipe = Recipe.objects.create(
+    #         title='egg tost',
+    #         time_minuts=10,
+    #         price=25,
+    #         user=self.user
+    #     )
+    #     recipe.tags.add(tag1)
+    #     res = self.client.get(RECIPE_URL,
+    #                           {'assigned_only':1})
+    #
+    #     seralizer1 = TagSerializer(tag1)
+    #     seralizer2 = TagSerializer(tag2)
+    #     self.assertIn(seralizer1.data, res.data)
+    #     self.assertNotIn(seralizer2.data, res.data)
+
 
 
 
